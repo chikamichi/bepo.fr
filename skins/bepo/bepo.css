@@ -1,0 +1,642 @@
+/*
+ ** MediaWiki 'bepo' style sheet for CSS2-capable browsers.
+ ** Copyright Jean-Denis Vauguet for http://www.bepo.fr
+ ** License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ **
+ ** Based on the Cavendish style by Mozilla Foundation.
+ **
+ ** Several styles are altered by jQuery hooks. Update
+ ** jquery-enhancements.js accordingly.
+ */
+
+/* Body */
+
+.qtip-wrapper {
+  -moz-box-shadow: 0 0 1em black;
+  -webkit-box-shadow: 0 0 1em black;  
+}
+
+body a {
+  text-decoration: none;
+}
+
+#container {
+  max-width: 1300px;
+  /*min-width: 875px;*/
+  margin: 0 auto;
+}
+
+#main, #side, #mainContent {
+  font-size: 10pt;
+}
+
+#mainContent, #side {
+  line-height: 1.3; /* value other than 'normal' needed for WinIE */
+  color: #000;
+}
+
+#mainContent {
+  min-height: 350px;
+  /*border-left: 1px dotted #e9e9e9;*/
+  /*background: url("maincontent_br.png") top right no-repeat;*/
+  /*padding: 1em 1% 0 1%; [> 1%, see basetemplate.css > #side and #mainContent <]*/
+}
+
+#mainContent p {
+  text-align: justify;
+}
+
+#mainContent dd {
+  border-left: 1px dotted #CFCCCC;
+  padding-left: 0.7em;
+}
+
+#nav li#nav-search form#search div {
+  background: #ffffff;
+  border: 3px solid #eeeeee;
+  font-size: 9pt;
+  height: 20px;
+  margin: 5px 0;
+  padding: 4px 0 4px 4px;
+}
+
+#nav li#nav-search form#search div input#q {
+  /*background: #ffffff url("search-inactive.png") no-repeat right center;*/
+  position: relative;
+  border: none;
+  top: -7px;
+  left: 0;
+  background: #ffffff;
+  font-weight: bold;
+  color: #cccccc;
+  height: 18px;
+  /*padding: 5px 30px 5px 5px;*/
+  /*padding: 0 0 10px 0;*/
+  font-size: 1em;
+  /*vertical-align: middle;*/
+  text-decoration: none;
+  width: 160px;
+}
+
+#nav li#nav-search form#search div input#q-submit {
+  position: relative;
+  right: -1px;
+}
+
+#nav li#nav-search form#search div input#q:hover {
+  /*background: transparent url("search.png") no-repeat right center;*/
+  /*color: #808080;*/
+  /*border: 3px solid #dedede;*/
+}
+
+.deepLevel #mainContent {
+  line-height: 1.4;
+}
+
+#nav {
+  line-height: 1em;
+}
+
+/* Random HTML Styles */
+
+hr {
+  height: 1px;
+  background-color: #000000;
+  color: #eeeeee;
+  margin: 0.5em 0;
+}
+
+input[type="submit"] {
+  font-weight: bold;
+}
+
+/* General Structure */
+
+body, td, th, input { /* redundant rules for bad browsers  */
+  font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
+  /*font-size: 0.8em;*/
+  /*voice-family: "\"}\"";*/
+  voice-family: inherit;
+}
+
+/* Titles */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1em 0 5px 0;
+  border-bottom: 1px solid #ccc;
+  font-family: arial, verdana, sans-serif;
+  /*clear: right;*/
+}
+
+li h1, li h2, li h3, li h4, li h5, li h6 {
+  border: none;
+}
+
+#header h1 { border: 0; }
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #B21818;
+  border-bottom: 1px solid #C6B1B1;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.1em;
+  font-weight: bold;
+  border-color: #e3e3e3;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  border-color: #e3e3e3;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: normal;
+  border-color: #e3e3e3;
+}
+
+/* Lists */
+
+#mainContent ul, #mainContent ol {
+  margin: 1em 0;
+  padding: 0 0 0 2em;
+}
+
+/* Notification and warning MediaWiki models */
+
+.note {
+  background: #CBD9F5 url("note.png") right top no-repeat;
+  border: 1px solid #1A48A3;
+  color: #2D3A52;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.5em;
+  min-height: 3em;
+  margin: 0.3em 0;
+  padding: 0 1em;
+  text-align: left;
+}
+
+.note-attention {
+  background: #F1D0D4 url("attention.png") right top no-repeat;
+  border: 1px solid #D94B4B;
+  color: #382D2E;
+}
+
+.note-img {
+  display: none;
+}
+
+/*.note + p, .note + ul, .note + ol, .note + dl, .note + span {*/
+  /*margin-top: 2em;*/
+/*}*/
+
+/*.note + .note {*/
+  /*margin-top: 0.2em;*/
+/*}*/
+
+/*.note p {*/
+  /*padding-top: 0.2em;*/
+/*}*/
+
+/*.note-attention {*/
+  /*border-color: red;*/
+/*}*/
+
+.citation {
+  background: url("citation.png") top left no-repeat;
+  font-style: italic;
+  margin: 0.3em 0;
+  padding: 0 3em;
+  color: #666666;
+}
+
+.citation-author {
+  /*float: right;*/
+  margin: 2em 0 0 0;
+  font-weight: bold;
+  text-align: right;
+  color: #424242;
+}
+
+/* Gestion des touches */
+ 
+.touche {
+  /* background et color sont définis dans Modèle:Touche */
+  background: #e9e9e9;
+  color: #000000;
+  font-family: monospace;
+  font-size: 0.9em;
+  border-top:    1px outset #424242;
+  border-left:   1px outset #424242;
+  border-right:  1px outset #B9B9B9;
+  border-bottom: 1px outset #B9B9B9;
+  -moz-border-radius: 0.4em;
+  padding: 0.1em 0.3em;
+  position: relative;
+  bottom: 0.07em;
+}
+
+/* pour Modèle:Touche */
+
+.touche a, .touche a:hover, .touche a:active, .touche a:visited {
+  color: #000000;
+}
+
+.touche a:hover {
+  border: 0;
+  position: relative;
+  z-index: 500;
+  text-decoration: none;
+}
+
+.touche > span.keyboard-tooltip /* tooltip displaying the keyboard type */
+{
+  display: none;
+  position: absolute;
+  top: 2em;
+  left: -12px;
+  border: 1px solid #bbbbbb;
+  background: #f9f9f9;
+  color: #000000;
+  font-size: smaller;
+  text-decoration: none;
+  text-align: left;
+  padding: 0.3em 0.5em;
+  -moz-border-radius: 0.5em;
+  width: auto;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+.touche > span.keyboard-tooltip > span.keyboard-tip {
+  position: absolute;
+  top: -7px;
+  left: 15px;
+  height: 7px;
+  width: 11px;
+  background: transparent url("touch-tooltip-corner.png");
+  margin:0;
+  padding: 0;
+}
+
+/* code, pre */
+
+code, pre {
+  font-family: "DejaVu Sans Mono", "Liberation Mono", Courier, "Courier New", FreeMono, monospace;
+}
+
+code > em, code > strong {
+  font-style: normal;
+}
+
+#mainContent code {
+  color: #A71D75;
+}
+
+.souscode {
+  border-left: 2px #bfdfff;
+}
+
+#mainContent pre  {
+  /*background: #f2f2f2;*/
+  background: #f2f2f2;
+  /*border: 1px solid #cccccc;*/
+  border-left: none;
+  border-left: 2px solid #891A91;
+  padding: 0.5em 0.7em;
+  overflow-x: auto;
+  font-size: 1.1em;
+  line-height: 1em;
+}
+
+pre.linenumbers { /* used by jquery in jquery-enhancements.js */
+  float: left;
+  margin: 0;
+  /*position: relative;*/
+  /*top: -1px;*/
+  /*left: 0;*/
+  color: #888;
+  text-align: right;
+  font-size: 1.1em;
+  line-height: 1em;
+}
+
+.souspre {
+  border-left: 2px #bfdfff;
+}
+
+.copy-code {
+  font-size: 0.8em;
+  color: #424242;
+}
+
+.xkb, .petit {
+  font-size: 0.85em;
+}
+
+.commande {
+  background: none;
+  color: #1184ab;
+  /*font-size: 1em;*/
+  font-weight: bold;
+}
+
+h1 + pre.linenumbers, h2 + pre.linenumbers, h3 + pre.linenumbers,
+h4 + pre.linenumbers, h5 + pre.linenumbers, h6 + pre.linenumbers {
+  margin-top: 10px;
+}
+
+/* editsection */
+
+span.editsection {
+  float: right;
+  width: auto;
+  margin: -0.5em 0 0 20px;
+  /*position: relative;*/
+  /*right: 0;*/
+  /*top: 30px;*/
+  background: #e9e9e9;
+  color: #e9e9e9;
+  padding: 0.2em 0.5em;
+  font-size: 0.7em;
+  font-weight: bold;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  border: 2px solid #f9f9f9;
+  /*border-bottom: none;*/
+  /*border-right: none;*/
+}
+
+h6 span.editsection {
+  padding: 0.3em 0.5em;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+}
+
+/*.editsection a, .editsection a:visited {*/
+  /*color: #b4b4b4;*/
+/*}*/
+
+/* hoverbox */
+/* from https://secure.wikimedia.org/wikibooks/en/w/index.php?title=MediaWiki:Common.css/Hoverbox.css */
+
+/* Hover Box for switching the visibility of the selected item */
+.hoverbox { position:relative; padding:0em; }
+.hoverbox .hoveritem { visibility:collapse; position:absolute; left:0px; top:0px; }
+.hoverbox .hoveritem.selected { visibility:visible; position:relative; }
+.hoverbox:hover .hoveritem { visibility:visible; position:relative; }
+.hoverbox:hover .hoveritem.selected { visibility:collapse; position:absolute;}
+
+/* TOC */
+/* from https://secure.wikimedia.org/wikibooks/en/w/index.php?title=MediaWiki:Common.css/toc.css */
+
+/* When <div class="nonumtoc"> is used on the table of contents, the ToC will display without numbers */
+.toclimit-count .tocnumber, .nonumtoc .tocnumber { display:none; }
+ 
+/* Allow limiting of which header levels are shown in a TOC; <div class="toclimit-3">, for
+instance, will limit to showing ==headings== and ===headings=== but no further (as long as
+there are no =headings= on the page, which there shouldn't be according to the MoS). */
+.toclimit-2 .toclevel-2 { display:none; }
+.toclimit-3 .toclevel-3 { display:none; }
+.toclimit-4 .toclevel-4 { display:none; }
+.toclimit-5 .toclevel-5 { display:none; }
+.toclimit-6 .toclevel-6 { display:none; }
+
+/* edit pages stuff */
+
+#editform, #toolbar, #wpTextbox1 { clear: none; }
+
+#wpTextbox1 {
+  border: 1px solid #ccc;
+  color: #000;
+  background: #fff;
+  /*filter : alpha(opacity=30);*/
+  /*-moz-opacity : 0.3;*/
+  /*opacity : 0.3;*/
+  /*margin-right: 5px;*/
+  width: 99.7%;
+}
+
+/* Links -- mostly handled by jQuery */
+
+#mainContent a.new:after {
+  content: url("new_page_edit.png");
+  margin-left: 3px;
+}
+
+/* Lists */
+
+ul li ul, ol li ol {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Navigation model and breadcrumbs */
+
+#subheading {
+  text-align: left;
+  margin: 0 0 2em 0;
+  padding: 0;
+}
+/* .nav-bis { height: 2em; } */
+/*.nav + .note { margin-top: 0.3em; }*/
+/*.nav + p, .nav + ul, .nav + ol, .nav + dl, .nav + span { margin-top: 2em; }*/
+
+#subheading > ul#breadcrumb {
+  /*border: 1px solid red;*/
+  margin: 0 1em 0 0;
+  padding: 0;
+  /*height: 26px;*/
+  /*line-height: 26px;*/
+  font-size: 1em;
+}
+
+#subheading > ul#breadcrumb li {
+  /*list-style-type:none;*/
+  /*border: 1px solid blue;*/
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-texte { display: none; } /* TODO: temporary, monobook.css stuff */
+.nav-icone { display: none; }
+#subheading > #subh-text, .introduction {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #595566;
+  line-height: 1.5em;
+  margin: 1em 0 0 0;
+  text-align: justify;
+}
+
+#subheading > ul#breadcrumb li.subh-item-first {
+  list-style: none;
+  padding-left: 0;
+}
+
+#subheading > ul#breadcrumb li.subh-icon {
+  display: none;
+}
+
+div.topicon {
+  position: absolute; 
+  z-index: 100; 
+  top: 10px;
+  display: block !important;
+}
+
+/* Miscellaneous */
+
+#link-to-top {
+  display: none;
+  text-align: right;
+  color: #0f73c8;
+  margin: 0;
+  padding: 0 30px 0 0;
+  background: transparent url("arrow-to-top-IE.png") right center no-repeat;
+  min-height: 20px;
+}
+
+.errorbox, .successbox {
+  float: none;
+  margin: 5px 0 1em 0;
+}
+ 
+/* Votes */
+ 
+.vote-contre {
+    color: #FF0000;
+}
+ 
+.vote-pour {
+    color: #008000;
+}
+ 
+.vote-neutre {
+    color: #808080;
+}
+
+/* Cadres */
+
+.cadre table {
+  font-size: 2em;
+}
+
+/* qTip tooltips */
+
+.tooltipContent {
+  display: none;
+}
+
+.qtip-content {
+  font-size: 0.9em;
+}
+
+/* Installation tabs (jQueryUI) */
+
+.ui-tabs .ui-tabs-hide {
+  display: none;
+}
+
+.installation-desc {
+  border: 1px solid #666666;
+  padding: 0 0.5em;
+  margin: 6px 0 0 0;
+}
+
+#installation > ul.ui-tabs-nav {
+  margin: 2em auto 0 auto;
+  text-align: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+#installation > ul.ui-tabs-nav > li {
+  display: inline;
+  /*float: left;*/
+  height: 21px;
+  background: #ebebeb;
+  padding: 6px 10px 6px 10px;
+  margin: 0;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border: 1px solid #666666;
+  border-bottom: none;
+}
+
+#installation > ul.ui-tabs-nav > li > a {
+  color: #000000;
+}
+
+#installation > ul.ui-tabs-nav > li.ui-tabs-selected {
+  background: #666666;
+}
+
+#installation > ul.ui-tabs-nav > li.ui-tabs-selected > a {
+  color: #ffffff;
+}
+
+#installation > ul.ui-tabs-nav > li > a > span {
+  margin: 0 0 0 28px;
+}
+
+#installation > ul.ui-tabs-nav > li > a.windows {
+  background: url("logo_Windows.png") center left no-repeat;
+}
+
+/* folding divs */
+
+.folding {
+  margin: 0.2em 0;
+}
+
+.folding-trigger {
+  padding: 0.3em 0.5em;
+  color: #961F35;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  cursor: help;
+  height:1.5em;
+  line-height: 1.5em;
+}
+
+.folding-content {
+  background: #f2f2f2;
+  border: 1px solid #e9e9e9;
+  border-top: none;
+  padding: 0.3em 0.5em;
+  text-align: justify;
+}
+
+.folding-notice {
+  float: left;
+  color: #666666;
+  font-weight: normal;
+  font-size: 0.9em;
+  text-align: left;
+  margin: 0 1em 0 0;
+  padding: 0;
+  width: auto;
+}
+

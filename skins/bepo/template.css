@@ -1,0 +1,274 @@
+/*
+ ** MediaWiki 'bepo' style sheet for CSS2-capable browsers.
+ ** Copyright Jean-Denis Vauguet for http://www.bepo.fr
+ ** License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ **
+ ** Based on the Cavendish style by Mozilla Foundation.
+ **
+ ** Several styles are altered by jQuery hooks. Update
+ ** jquery-enhancements.js accordingly.
+ */
+
+/* Basic Structure */
+
+/* Header */
+
+#header {
+  position: relative;
+  top: 0;
+  left: 0;
+  /*min-height: 39px;*/
+  padding: 0;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  height: 100px;
+  /*padding: 15px 0;*/
+}
+
+#header h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  font-size: 2px;
+  /*background: url("header_tl.gif") no-repeat;*/
+  height: 8px;
+  z-index: 100; /* above the UL */
+}
+#header h1 a {
+  display: block;
+  width: 268px;
+  height: 64px;
+  background: transparent url("header_logo.gif") no-repeat;
+  text-indent: -700em;
+  text-decoration: none;
+} 
+#header ul {
+  width: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0 15px 0 0;
+  list-style: none;
+  /*z-index: 90; [> below the H1 <]*/
+}
+#header li {
+  float: left;
+  width: auto;
+  /*background: transparent url("header_tab_red.png") 100% -600px no-repeat;*/
+  background: #ab2b43;
+  padding: 0 6px 0 0;
+  margin: 0 1px 0 0;
+  /*border-bottom: 1px solid #515358;*/
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+}
+
+#header li.selected {
+  background: #f9f9f9;
+  /*border: 1px solid #000000;*/
+  /*border-bottom: none;*/
+}
+
+#header ul li a {
+  float: left;
+  display: block;
+  padding: 4px 4px 4px 10px;
+  /*background: transparent url("header_tab_red.png") 0% -600px no-repeat;*/
+  font-weight: bold;
+  color: #f9f9f9;
+  text-decoration: none;
+}
+/*#header ul li:hover a { background-position: 0% -400px; }*/
+/*#header ul li:hover { background-position: 100% -400px; }*/
+
+body.sectionAbout li#menu_aboutus a,
+body.sectionProducts li#menu_products a,
+body.sectionSupport li#menu_support a,
+body.sectionDevelopers li#menu_developers a,
+body.sectionStore li#menu_store a {
+  background-position: 0% -200px;
+  color: #039;
+}
+
+body.sectionAbout li#menu_aboutus,
+body.sectionProducts li#menu_products,
+body.sectionSupport li#menu_support,
+body.sectionDevelopers li#menu_developers,
+body.sectionStore li#menu_store {
+  background-position: 100% -200px;
+  border-bottom: 1px solid #fff;
+}
+
+body.sectionAbout li#menu_aboutus:hover,
+body.sectionProducts li#menu_products:hover,
+body.sectionSupport li#menu_support:hover,
+body.sectionDevelopers li#menu_developers:hover,
+body.sectionStore li#menu_store:hover {
+  background-position: 100% 0%;
+}
+
+body.sectionAbout li#menu_aboutus:hover a,
+body.sectionProducts li#menu_products:hover a,
+body.sectionSupport li#menu_support:hover a,
+body.sectionDevelopers li#menu_developers:hover a,
+body.sectionStore li#menu_store:hover a {
+  background-position: 0% 0%;
+  color: #333;
+}
+
+/* Search Field */
+
+#header form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px 20px 0 0;
+  background: url("header_tr.gif") no-repeat top right;
+  margin: 0; /* need for IE Mac */
+  text-align: right; /* need for IE Mac */
+  white-space: nowrap; /* for Opera */
+}
+#header form label { color: #fff; font-size: 85%; }
+#header form input { font-size: 85%; }
+
+#header form #submit {
+  font-size: 85%;
+  background: #6A7389;
+  color: #fff;
+  padding: 1px 4px;
+  border-right: 1px solid #283043;
+  border-bottom: 1px solid #283043;
+  border-top: 1px solid #9097A2;
+  border-left: 1px solid #9097A2;
+}
+
+#header form #label-search, #header form #searchGoButton { display: none; }
+
+#header form #q {
+  width: 170px;
+  font-size: 85%;
+  border: 1px solid #9097A2;
+  background: #fff;
+  padding: 2px;
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  opacity : 0.7;
+}
+
+#header form #q:hover, #header form #q:focus {
+  background: #fff;
+}
+
+/* Sidebar */
+
+/*#nav:before {*/
+  /*line-height: 0.1;*/
+  /*font-size: 1px;*/
+  /*background: transparent url("menu_tr.gif") no-repeat top right;*/
+  /*margin: 0;*/
+  /*height: 9px;*/
+  /*display: block;*/
+  /*border-bottom: 1px solid #ddd;*/
+  /*content: url("key-point_tl.gif");*/
+/*}*/
+#nav {
+  /*background: url("menu_back.gif") right repeat-y;*/
+}
+/*#nav:after {*/
+  /*display: block;*/
+  /*content:  "";*/
+  /*height: 2px;*/
+  /*background: #947074;*/
+/*}*/
+
+#nav, #nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#nav ul {
+  margin: 0 0 5px 0;
+}
+#nav {
+  margin-bottom: 1em;
+} 
+#nav li {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+#nav li span { /* used for un-linked menu items */
+  background: #961F35;
+  display: block;
+  padding: 6px 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#nav li span#configParent, #nav li span #configuration {
+  display: inline;
+  font-weight: normal;
+  padding: 0;
+}
+
+#nav li a {
+  color: #424242;
+  display: block;
+  margin: 0;
+  padding: 8px 0;
+  text-decoration: none;
+  background: #EBEBEB url("nav-item-arrow.png") 10px 5px no-repeat;
+  border-bottom: 1px solid #e9e9e9;
+  border-top: 1px solid #f1f1f1;
+  /*border-right: 1px solid #ddd;*/
+  /*border-left: 1px solid #E9E9E9;*/
+}
+
+#nav li a:hover {
+  background: transparent url("nav-item-arrow.png") 10px -40px no-repeat;;
+  color: #AD4E4E;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+#nav li li span { /* used for un-linked menu items */
+  padding: 4px 8px 4px 20px;
+}
+
+#nav li ul li a {
+  padding: 6px 8px 6px 30px;
+}
+
+#nav li ul li span {
+  background: #e9e9e9;
+  padding: 0;
+  height: 1.5em;
+}
+
+#nav li ul li#feedlinks span#feed-rss a,
+#nav li ul li#feedlinks span#feed-atom a {
+  border: none;
+  background: #e9e9e9 url("rss.png") 0 0 repeat;
+  font-weight: normal;
+  margin: 0;
+  padding: 5px 0 0 30px;
+}
+
+#nav li ul li#feedlinks span#feed-rss a:hover,
+#nav li ul li#feedlinks span#feed-atom a:hover {
+  border: none;
+  background: #e9e9e9 url("rss.png") 0 0 repeat;
+}
+
+#nav li ul li#feedlinks span#feed-rss { padding-top: 5px; }
+#nav li ul li#feedlinks span#feed-atom { padding-bottom: 10px; }
+
+#oN {
+  background-color: #E0E9E9;
+}
+#oN:hover {
+  background-color: #C6DCDC;
+}
+

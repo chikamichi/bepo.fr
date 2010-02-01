@@ -1,0 +1,59 @@
+/*
+ ** MediaWiki 'bepo' style sheet for CSS2-capable browsers.
+ ** Copyright Jean-Denis Vauguet for http://www.bepo.fr
+ ** License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ **
+ ** Based on the Cavendish style by Mozilla Foundation.
+ **
+ ** Several styles are altered by jQuery hooks. Update
+ ** jquery-enhancements.js accordingly.
+ */
+
+/* These tooltips are a creation of http://jqueryfordesigners.com/coda-popup-bubbles/ */
+
+.bubbleInfo {
+  /*position: relative;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*width: 500px;*/
+}
+
+.trigger {
+  /*position: absolute;*/
+}
+
+/* Bubble pop-up */
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: -16px;
+  width: 250px;
+  /*border: 2px solid #000000;*/
+  background: #f9f9f9;
+  color: #000000;
+  text-align: justify;
+  line-height: 1.5em;
+  display: none;
+  z-index: 1100;
+  -moz-border-radius: 10px;
+  margin: 32px 0 0 0;
+  padding: 0.6em 1em;
+}
+
+.popup h2 {
+  margin: 0 0 0.5em 0;
+  padding: 0;
+}
+
+.popup a {
+  float: none;
+  display: inline;
+  color: #003399;
+}
+
+.popup ul {
+  margin: 0;
+  padding: 0 0 0 1.5em;
+}
+

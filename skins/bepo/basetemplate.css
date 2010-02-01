@@ -1,0 +1,79 @@
+/*
+ ** MediaWiki 'bepo' style sheet for CSS2-capable browsers.
+ ** Copyright Jean-Denis Vauguet for http://www.bepo.fr
+ ** License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ **
+ ** Based on the Cavendish style by Mozilla Foundation.
+ **
+ ** Several styles are altered by jQuery hooks. Update
+ ** jquery-enhancements.js accordingly.
+ */
+
+#container {
+  margin: 0;
+}
+
+#mBody {
+  /*clear: both;*/
+  /*padding: 0 0 1em 0;*/
+}
+
+#side {
+  float: left;
+  width: 200px; /* if modified, one must change #mainContent margin-left
+                   and form#search div input#q width accordingly */
+  /*margin-bottom: 1em;*/
+  /*background: #f9f9f9;*/
+  padding-bottom: 5px;
+}
+
+#mainContent {
+  /*float: right;*/
+  /*width: 100%;*/
+  margin: 0 0 1em 199px;
+  padding: 2px 10px 5px 15px;
+}
+
+/* Header */
+
+#header { margin-bottom: 0; }
+#header ul {
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+#header li {
+  display: inline;
+  padding: 0 20px 0 0;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Sidebar */
+
+#getcd {
+  margin: 1em 0 0 45px;
+}
+
+/* Bottom of the main content */
+
+#bottomContent {
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer */
+
+#footer {
+  clear: both;
+}
+
+/*accessibility tweaks*/
+.skipLink {
+  position: absolute;
+  left: -999px;
+  width: 990px;
+}
+hr.hide {
+  display: none;
+}

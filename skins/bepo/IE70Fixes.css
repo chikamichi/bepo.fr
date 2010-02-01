@@ -1,0 +1,28 @@
+/* 7.0 - only fixes */
+/* content area */ 
+/* workaround for various ie float bugs */
+
+#nav li#nav-search form#search div input#q {
+  top: -2px;
+}
+
+span.editsection {
+  margin: -0.25em 0 0 20px;
+}
+
+.note {
+  padding: 1em;
+}
+
+#footer {
+  margin-top: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: -5px;
+}
+
+#subheading > ul#breadcrumb {
+  margin-top: 0.5em;
+}
+
